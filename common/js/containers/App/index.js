@@ -6,7 +6,7 @@ import Footer from 'components/Footer';
 import routes from 'routes';
 
 const App = () => (
-  <Container fluid={false}>
+  <Container fluid={true}>
     <Header />
     <Switch>
       {routes.map(route => <Route key={route.path} {...route} />)}

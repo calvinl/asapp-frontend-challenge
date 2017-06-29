@@ -13,7 +13,7 @@ export default class HomeContainer extends Component {
     };
 
     return (
-      <Container>
+      <Container fluid>
         <Grid divided columns={2}>
           <Grid.Column>
             <Chat user={laura} channel={channel} />
