@@ -20,6 +20,7 @@ app.use(compression());
 
 // Use this middleware to serve up static files built into dist
 app.use('/dist', serveStatic(path.join(__dirname, '../dist')));
+app.use('/images', serveStatic(path.join(__dirname, '../common/images')));
 
 // This is fired every time the server side receives a request
 app.use(handleRender);
