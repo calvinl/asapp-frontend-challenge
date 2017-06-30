@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from 'constants';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from 'constants/todos';
 import generateActionCreator from 'lib/generateActionCreator';
 
 export const addTodo = generateActionCreator(ADD_TODO, 'text');
