@@ -1,0 +1,28 @@
+:global {
+  html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    height: 100%;
+    min-height: 100%;
+  }
+  #app {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+.container {
+  height: 100%;
+  min-height: 100%;
+}
+
+.innerContainer {
+  padding-top: 53px;
+  height: 100%;
+  min-height: 100%;
+}

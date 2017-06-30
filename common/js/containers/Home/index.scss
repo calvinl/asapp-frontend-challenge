@@ -1,5 +1,14 @@
-.home {
-  h1 {
-    font-size: 50px;
+.homeContainer {
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+  display: flex;
+
+  .left {
+    flex: 1;
+    border-right: 1px solid #ddd;
+  }
+  .right {
+    flex: 1;
   }
 }

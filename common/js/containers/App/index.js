@@ -4,13 +4,16 @@ import { Container } from 'semantic-ui-react';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import routes from 'routes';
+import css from './index.scss';
 
 const App = () => (
-  <Container fluid={true}>
+  <Container className={css.container} fluid={true}>
     <Header />
-    <Switch>
-      {routes.map(route => <Route key={route.path} {...route} />)}
-    </Switch>
+    <div className={css.innerContainer}>
+      <Switch>
+        {routes.map(route => <Route key={route.path} {...route} />)}
+      </Switch>
+    </div>
     <Footer />
   </Container>
 );
