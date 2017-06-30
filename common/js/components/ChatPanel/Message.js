@@ -1,12 +1,16 @@
 import React from 'react';
 import { Comment } from 'semantic-ui-react';
+import classnames from 'classnames/bind';
 import moment from 'moment';
+import css from './Message.scss';
 
-const Message = ({ message }) => {
+const cx = classnames.bind(css);
+
+const Message = ({ user, message }) => {
   const { sender } = message;
 
   return (
-    <Comment>
+    <Comment className={cx({ currentUser: sender.handle === user.handle })}>
       <Comment.Avatar src={sender.avatar} />
       <Comment.Content>
         <Comment.Author as="a">{sender.handle}</Comment.Author>

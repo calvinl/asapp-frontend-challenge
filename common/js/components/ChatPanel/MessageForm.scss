@@ -1,4 +1,11 @@
-.messageForm {}
+.messageForm {
+  width: 100%;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+}
 .messageInput {
   width: 100%;
 }

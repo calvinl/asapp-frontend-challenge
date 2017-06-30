@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Input } from 'semantic-ui-react';
+import classnames from 'classnames/bind';
 import css from './MessageForm.scss';
+
+const cx = classnames.bind(css);
 
 const getPlaceholder = (channel, participants) => {
   switch (channel.type) {
@@ -12,9 +16,9 @@ const getPlaceholder = (channel, participants) => {
   }
 };
 
-const MessageForm = ({ channel, participants }) => {
+const MessageForm = ({ channel, participants, className }) => {
   return (
-    <div className={css.messageForm}>
+    <div className={cx('messageForm', { [className]: !!className })}>
       <Input
         className={css.messageInput}
         placeholder={getPlaceholder(channel, participants)}
@@ -22,6 +26,12 @@ const MessageForm = ({ channel, participants }) => {
       />
     </div>
   );
+};
+
+MessageForm.propTypes = {
+  channel: PropTypes.object.isRequired,
+  participants: PropTypes.array,
+  className: PropTypes.string
 };
 
 export default MessageForm;

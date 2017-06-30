@@ -1,3 +1,21 @@
-.messageList {
-  padding: 10px;
+:global .ui.comments:local(.messageList) {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 55px;
+  overflow: hidden;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.innerFlex {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
