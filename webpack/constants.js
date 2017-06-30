@@ -46,7 +46,8 @@ export const RESOLVE_PATHS = {
   reducers: 'common/js/reducers',
   routes: 'common/js/routes',
   selectors: 'common/js/selectors',
-  store: 'common/js/store'
+  store: 'common/js/store',
+  fixtures: 'common/fixtures'
 };
 
 // Loader options to use for .scss files. This is here to avoid repetition
