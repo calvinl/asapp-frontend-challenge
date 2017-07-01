@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import ChatHeader from './ChatHeader';
 import MessageList from './MessageList';
@@ -10,7 +11,7 @@ const getParticipants = (user, participants) => {
 };
 
 const ChatPanel = (props) => {
-  const { user, channel } = props;
+  const { user, channel, onIncomingMessage, onOutgoingMessage } = props;
   const participants = getParticipants(user, channel.participants);
 
   return (
@@ -32,9 +33,16 @@ const ChatPanel = (props) => {
         {...props}
         className={css.messageForm}
         participants={participants}
+        onIncomingMessage={onIncomingMessage}
+        onOutgoingMessage={onOutgoingMessage}
       />
     </div>
   );
+};
+
+ChatPanel.propTypes = {
+  onIncomingMessage: PropTypes.func,
+  onOutgoingMessage: PropTypes.func
 };
 
 export default ChatPanel;

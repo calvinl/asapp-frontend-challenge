@@ -7,10 +7,12 @@ export function parseJSON(response) {
 
 // Simulate network latency by resolving the promise after a timeout, then
 // resolve with the supplied argument
-export function fakeFetch(resolveWith) {
+export function fakeFetch(resolveWith, timeout = null) {
+  const to = (timeout !== null ? timeout : (Math.random() * (1200 - 10) + 10));
+
   return new Promise(resolve =>
     setTimeout(() => {
       resolve(resolveWith);
-    }, Math.random() * (1200 - 10) + 10)
+    }, to)
   );
 }
