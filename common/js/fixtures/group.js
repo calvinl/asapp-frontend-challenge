@@ -1,10 +1,10 @@
-import createUser from './createUser';
+import mockUser from './mockUser';
 
 const participants = [
-  createUser('rob'),
-  createUser('laura'),
-  createUser('bill'),
-  createUser('tina')
+  mockUser('rob'),
+  mockUser('laura'),
+  mockUser('bill'),
+  mockUser('tina')
 ];
 
 export const [rob, laura, bill, tina] = participants;
