@@ -10,10 +10,22 @@ import config from './config';
 import configureStore from 'store';
 import serveStatic from 'serve-static';
 import compression from 'compression';
+import WebSocket from 'ws';
+import http from 'http';
 import App from 'containers/App';
 
 const app = new Express();
 const port = config.port;
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
+
+// websocket setup
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+    ws.send(message);
+  });
+});
 
 // gzip
 app.use(compression());
@@ -61,7 +73,7 @@ function handleRender(req, res) {
   res.status(200).send(render(component, finalState));
 }
 
-app.listen(port, (error) => {
+server.listen(port, (error) => {
   if (error) {
     console.error(error);
   } else {
