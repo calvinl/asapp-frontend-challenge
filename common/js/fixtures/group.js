@@ -10,7 +10,6 @@ const participants = [
 export const [rob, laura, bill, tina] = participants;
 
 export default {
-  id: 3,
   name: null,
   participants,
   type: 'private',
@@ -18,32 +17,32 @@ export default {
     {
       id: 1,
       sender: laura,
-      body: 'hey guys, what do you all think about the new product designs?',
-      timestamp: Date.now()
+      body: 'Hey guys, what do you all think about the new product designs?',
+      timestamp: Date.now() - (60 * 1000 * 20)
     },
     {
       id: 2,
       sender: laura,
-      body: 'i made them extra special this time around.',
-      timestamp: Date.now()
+      body: 'iI made them extra special this time around.',
+      timestamp: Date.now() - (60 * 1000 * 20)
     },
     {
       id: 3,
       sender: rob,
-      body: '@laura, they look great! i especially love the new meme integration!',
-      timestamp: Date.now()
+      body: '@laura, they look great! I especially love the new meme integration!',
+      timestamp: Date.now() - (60 * 1000 * 15)
     },
     {
       id: 4,
       sender: rob,
-      body: '@tina, what do you think? you are the creative director, after all.',
-      timestamp: Date.now()
+      body: '@tina, what do you think? You are the creative director, after all.',
+      timestamp: Date.now() - (60 * 1000 * 11)
     },
     {
       id: 5,
       sender: tina,
-      body: 'don\'t get snarky with me @rob. you\'re already on thin ice here.',
-      timestamp: Date.now()
+      body: 'Don\'t get snarky with me @rob. You\'re already on thin ice here.',
+      timestamp: Date.now() - (60 * 1000 * 5)
     },
     {
       id: 6,

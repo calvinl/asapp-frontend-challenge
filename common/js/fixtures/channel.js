@@ -11,7 +11,6 @@ const participants = [
 export const [rob] = participants;
 
 export default {
-  id: 2,
   name: 'general',
   participants,
   type: 'channel',

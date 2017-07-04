@@ -13,14 +13,14 @@ let messages = [
     sender: rob,
     recipient: laura,
     body: 'hey laura, do you have a sec?',
-    timestamp: Date.now()
+    timestamp: Date.now() - (60 * 1000 * 20)
   },
   {
     id: 2,
     sender: rob,
     recipient: laura,
     body: 'i wanted to ask you about the new designs',
-    timestamp: Date.now()
+    timestamp: Date.now() - (60 * 1000 * 20)
   },
   {
     id: 3,
@@ -42,7 +42,6 @@ let messages = [
 // }
 
 export default {
-  id: 1,
   name: null,
   participants,
   type: 'private',
