@@ -5,8 +5,12 @@ import {
   FETCH_CHANNEL_REQUEST,
   FETCH_CHANNEL_SUCCESS,
   FETCH_CHANNEL_FAILURE,
+  ADD_TYPIST,
+  REMOVE_TYPIST,
+  CLEAR_TYPISTS,
   CLEAR_CHANNEL
 } from 'constants/channel';
+import { find } from 'lodash';
 
 const defaultState = {
   isLoading: false,
@@ -15,11 +19,36 @@ const defaultState = {
   isSent: false,
   participants: [],
   messages: [],
+  typists: [],
   error: null
 };
 
 const channel = (state = defaultState, action) => {
   switch (action.type) {
+    case ADD_TYPIST: {
+      const typist = find(state.typists, { handle: action.user.handle });
+
+      if (typist) {
+        return state;
+      }
+
+      return {
+        ...state,
+        typists: [...state.typists, action.user]
+      };
+    }
+
+    case REMOVE_TYPIST:
+      return {
+        ...state,
+        typists: state.typists.filter(
+          typist => typist.handle !== action.user.handle
+        )
+      };
+
+    case CLEAR_TYPISTS:
+      return { ...state, typists: [] };
+
     case SEND_MESSAGE_REQUEST:
       return { ...state, isSending: true };
 

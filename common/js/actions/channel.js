@@ -5,12 +5,19 @@ import {
   SEND_MESSAGE_REQUEST,
   SEND_MESSAGE_SUCCESS,
   SEND_MESSAGE_FAILURE,
+  ADD_TYPIST,
+  REMOVE_TYPIST,
+  CLEAR_TYPISTS,
   CLEAR_CHANNEL
 } from 'constants/channel';
 import { fakeFetch } from 'lib/api';
 import generateActionCreator from 'lib/generateActionCreator';
 import mockChannel from 'fixtures/mockChannel';
 import mockMessage from 'fixtures/mockMessage';
+
+export const addTypist = generateActionCreator(ADD_TYPIST, 'user');
+export const removeTypist = generateActionCreator(REMOVE_TYPIST, 'user');
+export const clearTypists = generateActionCreator(CLEAR_TYPISTS);
 
 const sendMessageRequest = generateActionCreator(SEND_MESSAGE_REQUEST);
 const sendMessageSuccess = generateActionCreator(SEND_MESSAGE_SUCCESS, 'message');
