@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { isEqual } from 'lodash';
 import PropTypes from 'prop-types';
 import ChatPanel from 'components/ChatPanel';
 import { fetchChannel } from 'actions/channel';
@@ -16,9 +17,17 @@ class Chat extends Component {
   socket = null
 
   componentWillMount() {
-    const { dispatch, channel, channelProps } = this.props;
+    const { dispatch, channelProps } = this.props;
 
-    if (!channel.isLoaded) {
+    dispatch(fetchChannel(channelProps));
+  }
+
+  componentDidUpdate(prevProps) {
+    const { dispatch, channelProps } = this.props;
+    const { channelProps: prevChannelProps } = prevProps;
+
+    // check if channel props changed.
+    if (!isEqual(channelProps, prevChannelProps)) {
       dispatch(fetchChannel(channelProps));
     }
   }

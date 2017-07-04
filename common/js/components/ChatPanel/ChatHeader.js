@@ -1,16 +1,17 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 import css from './ChatHeader.scss';
+import { humanString } from 'lib/channelHelper';
 
 const cx = classnames.bind(css);
 
-const ChatHeader = ({ channel, participants, className }) => {
+const ChatHeader = ({ user, channel, className }) => {
   const title = () => {
     switch (channel.type) {
       default:
       case 'private':
         return (
-          <h2>Chatting with {participants.map(p => p.handle).join(', ')}</h2>
+          <h2>Chatting with {humanString(channel.participants, user)}</h2>
         );
       case 'channel':
         return (

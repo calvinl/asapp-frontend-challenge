@@ -6,13 +6,8 @@ import MessageList from './MessageList';
 import MessageForm from './MessageForm';
 import css from './index.scss';
 
-const getParticipants = (user, participants) => {
-  return participants.filter(p => p.handle !== user.handle);
-};
-
 const ChatPanel = (props) => {
-  const { user, channel, onIncomingMessage, onOutgoingMessage } = props;
-  const participants = getParticipants(user, channel.participants);
+  const { channel, onIncomingMessage, onOutgoingMessage } = props;
 
   return (
     <div className={css.chatPanel}>
@@ -22,7 +17,6 @@ const ChatPanel = (props) => {
       <ChatHeader
         {...props}
         className={css.chatHeader}
-        participants={participants}
       />
       <MessageList
         {...props}
@@ -32,7 +26,6 @@ const ChatPanel = (props) => {
       <MessageForm
         {...props}
         className={css.messageForm}
-        participants={participants}
         onIncomingMessage={onIncomingMessage}
         onOutgoingMessage={onOutgoingMessage}
       />
