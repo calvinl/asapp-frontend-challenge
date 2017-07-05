@@ -1,11 +1,13 @@
-require('dotenv-safe').load();
-
-const { NODE_ENV, APPLICATION_PORT, ASSET_URL } = require('../webpack/constants');
+const { NODE_ENV, PORT, APPLICATION_PORT, ASSET_URL } = require('../webpack/constants');
 const isDev = NODE_ENV === 'development';
 const configFile = isDev ? 'development' : 'production';
 const webpackConfig = require(`../webpack/${configFile}`).default;
-const applicationPort = APPLICATION_PORT || 3000;
+const applicationPort = PORT || APPLICATION_PORT || 3000;
 import packageJson from '../package.json';
+
+if (isDev) {
+  require('dotenv-safe').load();
+}
 
 export default {
   name: packageJson.name,

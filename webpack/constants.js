@@ -4,7 +4,7 @@
  */
 export const {
   NODE_ENV, DEV_SERVER_PORT, DEV_SERVER_HOSTNAME, WEBPACK_OUTPUT_PATH,
-  ASSET_HOST, ASSET_PATH, ANALYZE
+  ASSET_HOST, ASSET_PATH, ANALYZE, PORT
 } = process.env;
 
 // The URL of the dev server including the hostname and port
