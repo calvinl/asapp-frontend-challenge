@@ -1,6 +1,44 @@
 ASAPP Frontend Challenge
 ========================
 
+This is a sample application built for ASAPP's frontend coding challenge. It
+uses the following libraries and tools:
+
+- react
+- redux
+- react-router-v4
+- webpack
+- node.js (v8.1.3)
+- express
+- ES2017
+
+The data is mocked via `common/js/fixtures`, and API requests are simulated by
+a fake fetch, which is just a delayed Promise in `common/js/lib/api`. This can
+easily be replaced by a real request to a server since it is already set up for
+asynchronous actions.
+
+To start the demo, make sure you have the following pre-requisites:
+
+- node.js (7.x or higher)
+- yarn
+
+Then, install the package dependencies:
+
+```
+yarn install
+```
+
+Start the server:
+
+```
+yarn start
+```
+
+Webpack will compile the application. Once it is done, browse to http://localhost:3000
+on your machine. Open up the developer console to see debug data.
+
+## Challenge Details
+
 Welcome to your challenge project!
 
 For this challenge, we ask that you implement a solution at home in your own time. Please send us your results - including code, commit history if available, and a readme with setup instructions - within a week. If you need more time, let us know.
