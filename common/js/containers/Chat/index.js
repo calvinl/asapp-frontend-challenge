@@ -32,21 +32,21 @@ class Chat extends Component {
     }
   }
 
-  componentDidMount() {
-    if (!this.socket) {
-      const { host } = url.parse(window.location.href);
-
-      this.socket = new WebSocket(`ws://${host}`);
-
-      this.socket.addEventListener('open', () => {
-        console.log('Connected on ws://localhost:3000.');
-      });
-
-      this.socket.addEventListener('message', (event) => {
-        console.log('message received:', event);
-      });
-    }
-  }
+  // componentDidMount() {
+  //   if (!this.socket) {
+  //     const { host } = url.parse(window.location.href);
+  //
+  //     this.socket = new WebSocket(`ws://${host}`);
+  //
+  //     this.socket.addEventListener('open', () => {
+  //       console.log('Connected on ws://localhost:3000.');
+  //     });
+  //
+  //     this.socket.addEventListener('message', (event) => {
+  //       console.log('message received:', event);
+  //     });
+  //   }
+  // }
 
   handleIncomingMessage = (message) => {
     console.log('Incoming:', message);
@@ -54,7 +54,7 @@ class Chat extends Component {
 
   handleOutgoingMessage = (message) => {
     console.log('Outgoing:', message);
-    this.socket.send(message);
+    // this.socket.send(message);
   }
 
   render() {
